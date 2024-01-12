@@ -1,0 +1,175 @@
+:root {
+    --primaryColor: hsl(94, 55%, 56%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --palegreen: hsl(96, 75%, 89%);
+    --whiteGreen: hsl(0, 0%, 75%);
+    --blackColor: hsl(0, 0%, 18%);
+    --bgColor: hsl(113, 11%, 85%);
+    --greyText: hsl(0, 0%, 75%);
+    --inputColor: hsl(330, 12%, 97%);
+    --inputColor: hsl(154, 14%, 98%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --textColor: hsl(240, 1%, 48%);
+
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: 0.938rem;
+    --smallFontSize: 0.813rem;
+    --SmallestFontSize: 0.75rem;
+
+    .sidebar {
+        margin-bottom: -220px;
+        background: var(--whiteColor);
+        box-shadow: 1px 0 4px var(--greyText);
+        width: 16%;
+        height: 100%;
+        gap: 2rem;
+        overflow: auto;
+        position: relative;
+        margin-top: -250px;
+        
+        
+
+        .logoDiv {
+            padding: 1.5rem 1.5rem 0;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 20px;
+            margin-right: 0.5rem;
+            background-image: var(--inputColor);
+            border-radius: 2px;
+            padding: 0.2rem;
+        }
+
+        h2 {
+            font-size: var(--h2FontSize);
+            color: var(--primaryColor);
+        }
+    }
+
+    .menuDiv, .SettingDiv{
+        .divTitle{
+            font-size: var(--h3FontSize);
+            color: var(--blackColor);
+            padding: 0 1.5rem 1.5rem;
+        }
+        .menuList{
+            .listItem{
+                padding: .2rem 1.5rem;
+                width: 100%;
+                position: relative;
+
+                &::before{
+                    position: absolute;
+                    content: '';
+                    height: 0%;
+                    left: 0;
+                    width: 5px;
+                    bottom: 0;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    background: var(--primaryColor);
+                }
+
+                .menuLink{
+                    color: var(--greyText);
+                    font-weight: 500;
+                    transition: 0;
+                    .icon{
+                        margin-right: .5rem;
+
+                    }
+                    
+                }
+                &:hover .menuLink{
+                    color: var(--primaryColor);
+                    transition: 0;
+                }
+                &:hover::before{
+                    height: 100%;
+                    transform: 0.3s ease;
+                }
+            }
+        }
+    }
+    .sideBarCard{
+        width: 90%;
+        padding: 1rem;
+        text-align: center;
+        position: relative;
+
+        .icon{
+            position: absolute;
+            background: var(--hoverColor);
+            border-radius: 50%;
+            font-size: 3rem;
+            top: -30px;
+            right: 50%;
+            transform: translate(50%);
+            border: 10px solid white;
+            z-index: 100;
+        }
+
+        .cardContent{
+            position: relative;
+            padding: 1rem;
+            background: var(--hoverColor);
+            border-radius: 10px;
+            overflow: hidden;
+
+            h3{
+                font-size:var(--h3FontSize) ;
+                margin-top: 1rem;
+                padding: 1rem 0;
+                font-weight: 800;
+                color: var(--blackColor);
+            }
+
+            p{
+                font-size: var(--normalFontSize);
+                color: var(--textColor);
+                padding-bottom: 1rem;
+                font-weight: 500;
+            }
+
+            .btn{
+                position: relative;
+                color: var(--textColor);
+                z-index: 1000;
+            }
+
+            .circle1,.circle2{
+                position: absolute;
+                background-color: var(--palegreen);
+                border-radius: 50%;
+                opacity: .7;
+            }
+
+            .circle1{
+                height: 100px;
+                width: 100px;
+                top: -50px;
+                left: -50px;
+            }
+            .circle2{
+                height: 150px;
+                width: 150px;
+                bottom: -80px;
+                right: -70px;
+                z-index: 1;
+            }
+        }
+    }
+    ::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+.menuLink, span, Link, .manu{
+    text-decoration: none;
+    color: var(--greyText);
+}
