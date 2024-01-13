@@ -10,7 +10,7 @@ import axios from 'axios'
 
 
 const Login = () => {
-  const [email,setemail]= useState("")
+  const [username,setusername]= useState("")
   const [password,setpassword]= useState("")
 
   const navigate = useNavigate()
@@ -33,7 +33,7 @@ const Login = () => {
   // }
   const userlogin = async () => {
   try {
-    const response = await axios.post('http://localhost:3000/login', { email, password });
+    const response = await axios.post('http://localhost:3000/login', { username, password });
     console.log(response.status)
 
     if (response.status === 200) {
@@ -74,11 +74,11 @@ const Login = () => {
           <form action="" className='form grid'>
             <span className='showmessage'>Login Status will go here</span>
             <div className="inputDiv">
-              <label htmlFor="email">email</label>
+              <label htmlFor="username">username</label>
               <div className="input flex">
               <FaUserShield  className='icon'/>
-                <input type="email" id='email' placeholder='Enter Your email'
-                onChange={(e)=>setemail(e.target.value)} />
+                <input type="username" id='username' placeholder='Enter Your username'
+                onChange={(e)=>setusername(e.target.value)} />
               </div>
             </div>
             <div className="inputDiv">
